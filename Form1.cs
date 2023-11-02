@@ -135,4 +135,9 @@ public partial class Form1 : Form
         if (check + 1 == answer || check - 1 == answer) { return guessResult.CLOSE; }
         return guessResult.FAR;
     }
+
+    private void exit_Click(object sender, EventArgs e)
+    {
+        Application.Exit();
+    }
 }

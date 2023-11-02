@@ -42,6 +42,7 @@ partial class Form1
         History2 = new TextBox();
         History3 = new TextBox();
         guessDisplay = new TextBox();
+        exit = new Button();
         ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
         ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
         ((System.ComponentModel.ISupportInitialize)numericUpDown3).BeginInit();
@@ -177,11 +178,22 @@ partial class Form1
         guessDisplay.Size = new Size(150, 31);
         guessDisplay.TabIndex = 14;
         // 
+        // exit
+        // 
+        exit.Location = new Point(400, 373);
+        exit.Name = "exit";
+        exit.Size = new Size(112, 34);
+        exit.TabIndex = 15;
+        exit.Text = "Exit";
+        exit.UseVisualStyleBackColor = true;
+        exit.Click += exit_Click;
+        // 
         // Form1
         // 
         AutoScaleDimensions = new SizeF(10F, 25F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(994, 499);
+        Controls.Add(exit);
         Controls.Add(guessDisplay);
         Controls.Add(History3);
         Controls.Add(History2);
@@ -225,4 +237,5 @@ partial class Form1
     private TextBox History2;
     private TextBox History3;
     private TextBox guessDisplay;
+    private Button exit;
 }
