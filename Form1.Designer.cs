@@ -37,6 +37,11 @@ partial class Form1
         result1 = new PictureBox();
         result3 = new PictureBox();
         reset = new Button();
+        answer = new TextBox();
+        History1 = new TextBox();
+        History2 = new TextBox();
+        History3 = new TextBox();
+        guessDisplay = new TextBox();
         ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
         ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
         ((System.ComponentModel.ISupportInitialize)numericUpDown3).BeginInit();
@@ -47,7 +52,7 @@ partial class Form1
         // 
         // numericUpDown1
         // 
-        numericUpDown1.Location = new Point(101, 99);
+        numericUpDown1.Location = new Point(100, 99);
         numericUpDown1.Name = "numericUpDown1";
         numericUpDown1.Size = new Size(180, 31);
         numericUpDown1.TabIndex = 1;
@@ -55,7 +60,7 @@ partial class Form1
         // 
         // numericUpDown2
         // 
-        numericUpDown2.Location = new Point(382, 99);
+        numericUpDown2.Location = new Point(400, 99);
         numericUpDown2.Name = "numericUpDown2";
         numericUpDown2.Size = new Size(180, 31);
         numericUpDown2.TabIndex = 2;
@@ -63,7 +68,7 @@ partial class Form1
         // 
         // numericUpDown3
         // 
-        numericUpDown3.Location = new Point(665, 99);
+        numericUpDown3.Location = new Point(700, 99);
         numericUpDown3.Name = "numericUpDown3";
         numericUpDown3.Size = new Size(180, 31);
         numericUpDown3.TabIndex = 3;
@@ -71,7 +76,7 @@ partial class Form1
         // 
         // cheat
         // 
-        cheat.Location = new Point(281, 340);
+        cheat.Location = new Point(250, 340);
         cheat.Name = "cheat";
         cheat.Size = new Size(112, 34);
         cheat.TabIndex = 4;
@@ -81,7 +86,7 @@ partial class Form1
         // 
         // submit
         // 
-        submit.Location = new Point(567, 340);
+        submit.Location = new Point(550, 340);
         submit.Name = "submit";
         submit.Size = new Size(112, 34);
         submit.TabIndex = 5;
@@ -91,31 +96,37 @@ partial class Form1
         // 
         // result2
         // 
-        result2.Location = new Point(399, 174);
+        result2.Image = Properties.Resources.Incorrect_Guess;
+        result2.Location = new Point(400, 174);
         result2.Name = "result2";
         result2.Size = new Size(150, 75);
+        result2.SizeMode = PictureBoxSizeMode.StretchImage;
         result2.TabIndex = 6;
         result2.TabStop = false;
         // 
         // result1
         // 
-        result1.Location = new Point(116, 174);
+        result1.Image = Properties.Resources.Incorrect_Guess;
+        result1.Location = new Point(100, 174);
         result1.Name = "result1";
         result1.Size = new Size(150, 75);
+        result1.SizeMode = PictureBoxSizeMode.StretchImage;
         result1.TabIndex = 7;
         result1.TabStop = false;
         // 
         // result3
         // 
-        result3.Location = new Point(684, 174);
+        result3.Image = Properties.Resources.Incorrect_Guess;
+        result3.Location = new Point(700, 174);
         result3.Name = "result3";
         result3.Size = new Size(150, 75);
+        result3.SizeMode = PictureBoxSizeMode.StretchImage;
         result3.TabIndex = 8;
         result3.TabStop = false;
         // 
-        // button1
+        // reset
         // 
-        reset.Location = new Point(419, 410);
+        reset.Location = new Point(550, 410);
         reset.Name = "reset";
         reset.Size = new Size(112, 34);
         reset.TabIndex = 9;
@@ -123,11 +134,59 @@ partial class Form1
         reset.UseVisualStyleBackColor = true;
         reset.Click += reset_Click;
         // 
+        // answer
+        // 
+        answer.Location = new Point(250, 413);
+        answer.Name = "answer";
+        answer.ReadOnly = true;
+        answer.Size = new Size(150, 31);
+        answer.TabIndex = 10;
+        // 
+        // History1
+        // 
+        History1.Location = new Point(100, 255);
+        History1.Multiline = true;
+        History1.Name = "History1";
+        History1.ReadOnly = true;
+        History1.Size = new Size(150, 62);
+        History1.TabIndex = 11;
+        // 
+        // History2
+        // 
+        History2.Location = new Point(400, 255);
+        History2.Multiline = true;
+        History2.Name = "History2";
+        History2.ReadOnly = true;
+        History2.Size = new Size(150, 62);
+        History2.TabIndex = 12;
+        // 
+        // History3
+        // 
+        History3.Location = new Point(700, 255);
+        History3.Multiline = true;
+        History3.Name = "History3";
+        History3.ReadOnly = true;
+        History3.Size = new Size(150, 62);
+        History3.TabIndex = 13;
+        // 
+        // guessDisplay
+        // 
+        guessDisplay.Location = new Point(400, 44);
+        guessDisplay.Name = "guessDisplay";
+        guessDisplay.ReadOnly = true;
+        guessDisplay.Size = new Size(150, 31);
+        guessDisplay.TabIndex = 14;
+        // 
         // Form1
         // 
         AutoScaleDimensions = new SizeF(10F, 25F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(994, 499);
+        Controls.Add(guessDisplay);
+        Controls.Add(History3);
+        Controls.Add(History2);
+        Controls.Add(History1);
+        Controls.Add(answer);
         Controls.Add(reset);
         Controls.Add(result3);
         Controls.Add(result1);
@@ -147,6 +206,7 @@ partial class Form1
         ((System.ComponentModel.ISupportInitialize)result1).EndInit();
         ((System.ComponentModel.ISupportInitialize)result3).EndInit();
         ResumeLayout(false);
+        PerformLayout();
     }
 
     #endregion
@@ -160,4 +220,9 @@ partial class Form1
     private PictureBox result1;
     private PictureBox result3;
     private Button reset;
+    private TextBox answer;
+    private TextBox History1;
+    private TextBox History2;
+    private TextBox History3;
+    private TextBox guessDisplay;
 }
