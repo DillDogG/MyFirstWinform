@@ -67,7 +67,7 @@ public partial class Form1 : Form
             stateKeeper.SetLastGuessesState(false, true, 1);
             submit1.Enabled = false;
         }
-        check_win();
+        if (stateKeeper.check_win()) set_win();
         result1.Image = stateKeeper.GetImage(1);
     }
 
@@ -88,7 +88,7 @@ public partial class Form1 : Form
             stateKeeper.SetLastGuessesState(false, true, 2);
             submit2.Enabled = false;
         }
-        check_win();
+        if (stateKeeper.check_win()) set_win();
         result2.Image = stateKeeper.GetImage(2);
     }
 
@@ -109,7 +109,7 @@ public partial class Form1 : Form
             stateKeeper.SetLastGuessesState(false, true, 3);
             submit3.Enabled = false;
         }
-        check_win();
+        if (stateKeeper.check_win()) set_win();
         result3.Image = stateKeeper.GetImage(3);
     }
 
@@ -162,18 +162,14 @@ public partial class Form1 : Form
         else stateKeeper.SetLastGuessesState(false, false, section);
     }
 
-    private void check_win()
+    private void set_win()
     {
-        if (lastGuesses1[0] == numberOne && lastGuesses2[0] == numberTwo && lastGuesses3[0] == numberThree)
-        {
-            stateKeeper.SetLastGuessesState(true, true);
-            submit1.Enabled = false;
-            submit2.Enabled = false;
-            submit3.Enabled = false;
-            result1.Image = stateKeeper.GetImage(1);
-            result2.Image = stateKeeper.GetImage(2);
-            result3.Image = stateKeeper.GetImage(3);
-        }
+        submit1.Enabled = false;
+        submit2.Enabled = false;
+        submit3.Enabled = false;
+        result1.Image = stateKeeper.GetImage(1);
+        result2.Image = stateKeeper.GetImage(2);
+        result3.Image = stateKeeper.GetImage(3);
     }
 
     private void exit_Click(object sender, EventArgs e)

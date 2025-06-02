@@ -110,6 +110,16 @@ namespace MyFirstWinform
             lastGuessesState3[1].setState(noState);
         }
 
+        public bool check_win()
+        {
+            if (lastGuessesState1[0].state is CorrectState && lastGuessesState2[0].state is CorrectState && lastGuessesState3[0].state is CorrectState)
+            {
+                SetLastGuessesState(true, true);
+                return true;
+            }
+            return false;
+        }
+
         public string GetState(int section, bool first = true)
         {
             if (first)
